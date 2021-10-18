@@ -22,11 +22,11 @@ export class UserService {
 
   existUser()
   {
-    return this.user.login != '' ? true : false; //ternary operator
+    return this.user.login != '' ? true : false; //
   }
 
   existRepository()
   {
-    return this.repositories[0].owner.login != '' ? true : false; //ternary operator
+    return this.repositories[0].owner.login != '' ? true : false;
   }
 }
