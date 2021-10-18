@@ -21,7 +21,7 @@ export class VoicesService {
 
   speakBio(word: string) {
     this.getVoices();
-    const regex = new RegExp(`${this.getLang()}`, 'g');
+    const regex = new RegExp(`${this.getLang()}`, 'g'); // this flag matches the language defined @ assets and speak it in that language
     const localVoice = this.voices?.find((voice) =>
       regex.test(voice.lang)
     );

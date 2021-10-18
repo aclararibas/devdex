@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 
 export class ScrollService {
 
-  scrolledPage = false;
+  scrolledPage = false; //shows icon when scroll 'till bottom page
   changeColor = false;
 
   constructor() { }
