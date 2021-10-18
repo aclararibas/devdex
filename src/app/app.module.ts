@@ -39,7 +39,8 @@ import { ListFollowingComponent } from './shared/components/list-following/list-
 import { HomeComponent } from './shared/components/home/home.component';
 import { ListStarredComponent} from "./shared/components/list-starred/list-starred.component";
 
-export function HttpLoaderFactory(httpClient: HttpClient) {
+export function HttpLoaderFactory(httpClient: HttpClient)
+{
   return new TranslateHttpLoader(httpClient);
 }
 

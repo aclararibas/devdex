@@ -9,10 +9,10 @@ import { environment } from 'src/environments/environment';
 })
 
 export class QrcodeComponent implements OnInit {
-  public myAngularxQrCode: string = '';
+  public QrCode: string = '';
 
   constructor(private userService: UserService) {
-    this.myAngularxQrCode = `${environment.url}user/${this.userService.user.login}`;
+    this.QrCode = `${environment.url}user/${this.userService.user.login}`;
   }
 
   ngOnInit(): void {}

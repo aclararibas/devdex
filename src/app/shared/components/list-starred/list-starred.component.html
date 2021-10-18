@@ -7,8 +7,9 @@
 <div class="show">
   <div class="title">
     <mat-icon *ngIf="starredService.loadingTotal" class="starred-loading" [ngClass]="{ 'repos-loading': starredService.loadingTotal }">star</mat-icon>
-    <span *ngIf="!starredService.loadingTotal">{{ starredService.totalStarred.length }}</span>
-    {{ ("homeUser.starred" | translate) }}
+    <span *ngIf="!starredService.loadingTotal">
+      {{ starredService.totalStarred.length + ' ' + ("homeUser.starred" | translate) }}
+    </span>
   </div>
 
   <div class="grid-repos" infinite-scroll [infiniteScrollDistance]="scrollDistance"

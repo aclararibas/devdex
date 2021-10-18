@@ -12,7 +12,7 @@
   </div>
 
   <div *ngIf="userService.user.blog">
-    <a href="http://{{ userService.user.blog }}" target="_blank" title="{{ userService.user.blog }}">
+      <a href="{{ userService.user.blog }}" target="_blank" title="{{ userService.user.blog }}"> <!-- if external link doesn't open, just add https:// before {{ userService.user.blog }} -->
       <i class="fas fa-link" fa-lg></i>
     </a>
   </div>
