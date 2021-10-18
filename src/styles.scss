@@ -1,0 +1,96 @@
+$darkblue: #09142c;
+$fulldarkblue: #0a0518;
+$purple: #660066;
+$lightblue: #345292;
+$lightpurple: #483C67;
+$blackblue: #191622;
+$lightblackblue: #1e1a2c;
+$darkgray: #333333;
+$gray: #666666;
+$lightgray: #999999;
+$ultralightgray: #dddddd;
+$white: #ffffff;
+$darkwhite: #eeeeee;
+$magenta: #ff79c6;
+
+
+:root {
+  --color-primary: #{$darkblue};
+  --color-secondary: #{$purple};
+  --color-tertiary: #{$lightblue};
+
+  --color-bg-primary: #{$white};
+  --color-bg-secondary: #{$ultralightgray};
+  --color-bg-tertiary: #{$white};
+
+  --color-font-primary: #{$darkgray};
+  --color-font-secondary: #{$white};
+  --color-font-tertiary: #{$gray};
+
+  --color-white: #{$white};
+  --color-darkblue: #{$darkblue};
+  --color-magenta: transparent;
+}
+
+.dark {
+  --color-primary: #{$darkwhite};
+  --color-secondary: #{$purple};
+  --color-tertiary: #{$lightpurple};
+
+  --color-bg-primary: #{$blackblue};
+  --color-bg-secondary: #{$blackblue};
+  --color-bg-tertiary: #{$lightblackblue};
+
+  --color-font-primary: #{$darkwhite};
+  --color-font-secondary: #{$darkgray};
+  --color-font-tertiary: #{$lightgray};
+
+  --color-white: #{$darkwhite};
+  --color-darkblue: #{$fulldarkblue};
+  --color-magenta: #{$magenta};
+}
+
+* {
+  box-sizing: border-box;
+  color: var(--color-font-primary);
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+  scrollbar-color: var(--color-bg-tertiary) var(--color-font-secondary);
+}
+
+body::-webkit-scrollbar {
+  background-color: var(--color-font-secondary);
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--color-tertiary);
+}
+
+body {
+  // background: linear-gradient(to bottom, $darkblue 20%, $purple 100%);
+  background-color: var(--color-darkblue);
+  background-attachment: fixed;
+  margin: 0;
+  font-family: 'Roboto', "Helvetica Neue", sans-serif;
+}
+
+.no-select {
+  -webkit-touch-callout: none;  /* iPhone OS, Safari */
+  -webkit-user-select: none;    /* Chrome, Safari */
+  -khtml-user-select: none;     /* Safari 2 */
+  -moz-user-select: none;       /* Firefox */
+  -ms-user-select: none;        /* IE10+ */
+  user-select: none;
+}
+
+.mat-menu-panel {
+  padding: 10px;
+  background-color: var(--color-bg-tertiary);
+}

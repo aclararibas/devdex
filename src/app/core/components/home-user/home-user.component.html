@@ -1,0 +1,30 @@
+<div class="home-profile" *ngIf="userService.existUser(); else noUser">
+  <div class="with-user" id="with-user">
+    <div class="with-user-image">
+      <a href="https://github.com/{{ userService.user.login }}" target="_blank">
+        <img src="{{ userService.user.avatar_url }}" alt="Utilizador"/>
+      </a>
+    </div>
+
+    <div class="name-user" *ngIf="userService.user.name">{{ userService.user.name }}</div>
+
+    <div class="login">{{ userService.user.login }}</div>
+
+    <div class="share">
+      <div class="qrcode">
+        <button type="button" (click)="openQRCode()"><mat-icon>qr_code_2</mat-icon></button>
+      </div>
+
+      <div class="link">
+        <button [cdkCopyToClipboard]="userService.linkUser" (click)="copyLink()"><mat-icon>link</mat-icon></button>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<app-scroll-top></app-scroll-top>
+
+<ng-template #noUser>
+  <app-home-no-user></app-home-no-user>
+</ng-template>

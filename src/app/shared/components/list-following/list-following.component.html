@@ -1,0 +1,29 @@
+<app-button-back
+  (click)="navigateService.navigateToHomeUser(userService.user.login); reset()"
+  *ngIf="userService.existUser()">
+</app-button-back>
+
+<div class="show">
+  <div class="title">
+    {{ userService.user.following + ' ' + ("homeUser.following" | translate) }} <!-- display quantity of people you follow -->
+  </div>
+
+  <div class="grid" infinite-scroll [infiniteScrollDistance]="scrollDistance"
+       [infiniteScrollThrottle]="throttle" (scrolled)="onScrollDown()">
+    <div class="follow" *ngFor="let following of followService.listFollowing; let i = index;">
+
+      <div class="image">
+        <img src="{{ following.avatar_url }}" alt="{{ 'homeUser.following' | translate }}"> <!-- display profile pics of people you follow -->
+      </div>
+
+      <div class="name">
+        <a href="{{ following.html_url }}" target="_blank">{{ following.login }}</a> <!-- display names of people you follow -->
+      </div>
+    </div>
+  </div>
+
+  <div class="infinite-scroll-loading">
+    <mat-icon class="icon loading" *ngIf="followService.loading">change_circle</mat-icon>
+  </div>
+</div>
+

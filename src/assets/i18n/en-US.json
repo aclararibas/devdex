@@ -1,0 +1,24 @@
+{
+  "home": {
+    "description": "Dev Finder",
+    "description-2": "@ GitHub",
+    "input": "Username"
+  },
+  "config": {
+    "darkmode": "Dark Mode",
+    "language": "Language"
+  },
+  "homeUser": {
+    "followers": "Followers",
+    "following": "Following",
+    "publicRepos": "Public Repositories",
+    "starred": "Starred"
+  },
+  "worker": {
+    "update": "Update available. Click 'OK' to update!"
+  },
+  "snackbar": {
+    "copied": "Link copied to clipboard!",
+    "user-not-found": "Sorry, user not found! Try again."
+  }
+}

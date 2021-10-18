@@ -1,0 +1,33 @@
+<app-button-back
+  (click)="navigateService.navigateToHomeUser(userService.user.login);"
+  *ngIf="userService.existUser()">
+
+</app-button-back>
+
+<div class="show">
+  <div class="title">
+    <mat-icon *ngIf="starredService.loadingTotal" class="starred-loading" [ngClass]="{ 'repos-loading': starredService.loadingTotal }">star</mat-icon>
+    <span *ngIf="!starredService.loadingTotal">{{ starredService.totalStarred.length }}</span>
+    {{ ("homeUser.starred" | translate) }}
+  </div>
+
+  <div class="grid-repos" infinite-scroll [infiniteScrollDistance]="scrollDistance"
+       [infiniteScrollThrottle]="throttle" (scrolled)="onScrollDown()">
+    <div class="repo" *ngFor="let repo of starredService.listStarred; let i = index;">
+      <div class="repo-name"><a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a></div>
+      <div class="repo-description">{{ repo.description }}</div>
+
+      <div class="repo-count">
+        <div>{{ repo.forks_count }} <i class="fas fa-code-branch fa-fw"></i></div> <!-- defines the quantity of forks that repo has based on what's on GitHub -->
+
+        <div>{{ repo.stargazers_count }} <i class="fas fa-star fa-fw"></i></div> <!-- defines the quantity of stars that repo has based on what's on GitHub -->
+
+        <div>{{ repo.language }}<i class="fas fa-circle fa-fw {{ repo.language }}"></i></div> <!-- defines the type of language the repo was based of and set a color assigned to it @ GitHub -->
+      </div>
+    </div>
+  </div>
+
+  <div class="infinite-scroll-loading">
+    <mat-icon class="icon repos-loading" *ngIf="starredService.loadingTotal"> change_circle </mat-icon>
+  </div>
+</div>

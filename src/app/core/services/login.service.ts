@@ -11,7 +11,9 @@ import { TranslatorService } from './translator.service';
 @Injectable({
   providedIn: 'root',
 })
+
 export class LoginService {
+
   constructor(
     public userService: UserService,
     public starredService: StarredService,
@@ -19,7 +21,7 @@ export class LoginService {
     private navigateService: NavigateService,
     private _snackBar: MatSnackBar,
     private translator: TranslatorService,
-  ) {}
+  ) { }
 
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
@@ -29,9 +31,14 @@ export class LoginService {
     this.githubService.getUser(login).subscribe((data: user) => {
       this.userService.loading = false;
       this.userService.user = data;
-      if (!this.userService.existUser()) {
+
+      if (!this.userService.existUser())
+      {
         this.navigateService.navigateToHomeNoUser();
-      } else {
+      }
+
+      else
+      {
         this.userService.linkUser = `${environment.url}user/${this.userService.user.login}`;
         this.setTitle(`${this.userService.user.name}`);
         this.starredService.pageTotalStarred = 0;

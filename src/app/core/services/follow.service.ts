@@ -20,9 +20,15 @@ export class FollowService {
   getFollowersPerPage() {
     let page = Math.ceil(this.listFollowers.length / this.followPerPage) + 1;
 
-    if(this.pageFollowers != page) {
+    if(this.pageFollowers != page)
+    {
       this.pageFollowers = page;
-    } else { return; }
+    }
+
+    else
+    {
+      return;
+    }
 
     this.loading = true;
     this.githubService.getFollowersPerPage(this.userService.user.login, this.pageFollowers, this.followPerPage)
@@ -35,9 +41,15 @@ export class FollowService {
   getFollowingPerPage() {
     let page = Math.ceil(this.listFollowing.length / this.followPerPage) + 1;
 
-    if(this.pageFollowing != page) {
+    if(this.pageFollowing != page)
+    {
       this.pageFollowing = page;
-    } else { return; }
+    }
+
+    else
+    {
+      return;
+    }
 
     this.loading = true;
     this.githubService.getFollowingPerPage(this.userService.user.login, this.pageFollowing, this.followPerPage)

@@ -1,0 +1,29 @@
+.back {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+}
+
+.btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn mat-icon {
+  color: var(--color-white);
+  font-weight: bold;
+}
+
+.btn mat-icon:hover {
+  color: var(--color-tertiary);
+}
+
+.btn .changeColor {
+  color: var(--color-tertiary);
+}
+
+.btn .changeColor:hover {
+  color: var(--color-primary);
+}

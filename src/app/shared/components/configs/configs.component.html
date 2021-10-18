@@ -1,0 +1,32 @@
+<button class="btn-settings" [matMenuTriggerFor]="configs">
+  <mat-icon class="icon-settings">settings</mat-icon>
+</button>
+
+<mat-menu #configs="matMenu" yPosition="above">
+  <div class="menu-btn">
+
+    <div>
+      <label class="switch">
+        <input *ngIf="getDarkmode() == 'true'" type="checkbox" checked id="darkmode" (click)="toggle()"/>
+        <input *ngIf="getDarkmode() == 'false'" type="checkbox" id="darkmode" (click)="toggle()"/>
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <div>{{ "config.darkmode" | translate }}</div>
+  </div>
+
+  <div class="menu-btn">
+    <div>
+      <button class="language" mat-menu-item [matMenuTriggerFor]="languages">{{ languageService.translate.currentLang }}</button>
+    </div>
+
+    <div>{{ "config.language" | translate }}</div>
+  </div>
+</mat-menu>
+
+<mat-menu #languages="matMenu" xPosition="before" yPosition="above">
+  <button class="select-language" *ngFor="let lang of languageService.translate.getLangs()"
+    (click)="languageService.setLanguage(lang)">{{ lang }}
+  </button>
+</mat-menu>

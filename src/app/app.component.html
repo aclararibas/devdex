@@ -1,0 +1,32 @@
+<app-github-corner></app-github-corner>
+
+<div class="home">
+  <div class="home-user">
+    <div class="title">
+      <div>Dev</div>
+      <div class="dex">Dex</div>
+    </div>
+
+    <div class="description">
+      <div>{{ 'home.description' | translate }}</div>
+      <div class="developer">{{ 'home.description-2' | translate }}</div>
+    </div>
+
+    <div [formGroup]="myForm" class="user-input">
+      <input type="text" placeholder="{{ 'home.input' | translate }}" [formControlName]="'user'"
+        [name]="'user'" id="user" (keyup.enter)="onEnter()"/>
+    </div>
+
+    <div class="bar">
+      <div></div>
+    </div>
+  </div>
+
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<div class="configs">
+  <app-configs></app-configs>
+</div>
